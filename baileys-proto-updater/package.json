@@ -1,0 +1,52 @@
+{
+  "name": "baileys-proto-updater",
+  "version": "0.1.0",
+  "description": "Runtime-Plugin für @whiskeysockets/baileys (7.x): holt sich die neueste WhatsApp-Proto direkt von web.whatsapp.com, patched WAProto + Handshake-Version auf Disk und hot-swapped sie zur Laufzeit – mit Event-Callback.",
+  "type": "module",
+  "main": "src/index.js",
+  "types": "types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "default": "./src/index.js"
+    }
+  },
+  "bin": {
+    "baileys-proto-updater": "bin/cli.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "workers",
+    "types",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node test/e2e.mjs"
+  },
+  "keywords": [
+    "baileys",
+    "whatsapp",
+    "protobuf",
+    "proto",
+    "updater",
+    "wa-web"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@stormofhoney/oak": "file:vendor/stormofhoney-oak-0.9.9-rc001.tgz",
+    "protobufjs": "^7.6.6",
+    "protobufjs-cli": "^1.1.3"
+  },
+  "peerDependencies": {
+    "@whiskeysockets/baileys": ">=7.0.0-rc14 <8.0.0-0"
+  },
+  "peerDependenciesMeta": {
+    "@whiskeysockets/baileys": {
+      "optional": true
+    }
+  }
+}
